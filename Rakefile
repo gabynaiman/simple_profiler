@@ -5,6 +5,7 @@ Rake::TestTask.new(:spec) do |t|
   t.libs << 'spec'
   t.pattern = 'spec/**/*_spec.rb'
   t.verbose = false
+  t.warning = false
 end
 
 desc 'Console'
@@ -15,4 +16,4 @@ task :console do
   Pry.start
 end
 
-task :default => :spec
+task default: :spec

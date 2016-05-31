@@ -20,10 +20,8 @@ describe SimpleProfiler do
     end
   end
 
-  SimpleProfiler.configure do |config|
-    SimpleProfiler.profile_class_methods    TestRunner, :run
-    SimpleProfiler.profile_instance_methods TestRunner, :run
-  end
+  SimpleProfiler.profile_class_methods    TestRunner, :run
+  SimpleProfiler.profile_instance_methods TestRunner, :run
 
   it 'Profile class methods' do
     filename = File.join temp_path, "file_#{(Time.now.to_f * 1000).to_i}.txt"
