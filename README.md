@@ -1,10 +1,10 @@
 # SimpleProfiler
 
-[![Gem Version](https://badge.fury.io/rb/simple_profiler.png)](https://rubygems.org/gems/simple_profiler)
-[![Build Status](https://travis-ci.org/gabynaiman/simple_profiler.png?branch=master)](https://travis-ci.org/gabynaiman/simple_profiler)
-[![Coverage Status](https://coveralls.io/repos/gabynaiman/simple_profiler/badge.png?branch=master)](https://coveralls.io/r/gabynaiman/simple_profiler?branch=master)
-[![Code Climate](https://codeclimate.com/github/gabynaiman/simple_profiler.png)](https://codeclimate.com/github/gabynaiman/simple_profiler)
-[![Dependency Status](https://gemnasium.com/gabynaiman/simple_profiler.png)](https://gemnasium.com/gabynaiman/simple_profiler)
+[![Gem Version](https://badge.fury.io/rb/simple_profiler.svg)](https://rubygems.org/gems/simple_profiler)
+[![Build Status](https://travis-ci.org/gabynaiman/simple_profiler.svg?branch=master)](https://travis-ci.org/gabynaiman/simple_profiler)
+[![Coverage Status](https://coveralls.io/repos/gabynaiman/simple_profiler/badge.svg?branch=master)](https://coveralls.io/r/gabynaiman/simple_profiler?branch=master)
+[![Code Climate](https://codeclimate.com/github/gabynaiman/simple_profiler.svg)](https://codeclimate.com/github/gabynaiman/simple_profiler)
+[![Dependency Status](https://gemnasium.com/gabynaiman/simple_profiler.svg)](https://gemnasium.com/gabynaiman/simple_profiler)
 
 ## Installation
 
