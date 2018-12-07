@@ -12,13 +12,10 @@ module SimpleProfiler
 
   extend ClassConfig
   attr_config :reporters, [SimpleProfiler::Reporters::Logger.new(Logger.new(STDOUT))]
+  attr_config :enabled_log_memory, true
 
-  @disable_log_memory = false
-  
   class << self
 
-    attr_accessor :disable_log_memory
-    
     def profile_instance_methods(klass, *methods)
       methods.each do |method|
         new_method = "__#{method}_profiled__"
@@ -66,7 +63,7 @@ module SimpleProfiler
     end
 
     def process_memory
-      disable_log_memory ? 0 : process.memory 
+      enabled_log_memory ? process.memory : 0
     end
 
   end
