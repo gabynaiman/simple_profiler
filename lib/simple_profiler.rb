@@ -13,6 +13,7 @@ module SimpleProfiler
   extend ClassConfig
   attr_config :reporters, [SimpleProfiler::Reporters::Logger.new(Logger.new(STDOUT))]
   attr_config :enabled_log_memory, true
+  attr_config :track_method_args, true
 
   class << self
 
@@ -46,7 +47,8 @@ module SimpleProfiler
       
       result = yield
       
-      notify Event.new(klass, target, method, args, started_at, Time.now, memory, process_memory)
+      tracked_args = track_method_args ? args : []
+      notify Event.new(klass, target, method, tracked_args, started_at, Time.now, memory, process_memory)
       result
     end
 
