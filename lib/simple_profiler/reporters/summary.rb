@@ -15,7 +15,9 @@ module SimpleProfiler
       def ranking(options={})
         order = options.fetch(:sort_by, :total_time)
 
-        events_by_method = events.group_by {|e| {klass: e.klass.to_s, method: e.method, target: e.target}}
+        # TODO: find why some events are nil, the current thought is that when the program is concurrent, the events notify may have some problems
+        events_by_method = events.compact.group_by {|e| {klass: e.klass.to_s, method: e.method, target: e.target}}
+        
         ranking = events_by_method.map do |key, values|
           key.merge statistics_for(values)
         end

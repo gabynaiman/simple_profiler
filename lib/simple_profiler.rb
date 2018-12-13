@@ -55,10 +55,8 @@ module SimpleProfiler
     private
 
     def notify(event)
-      unless event.nil?  # TODO: find why some events are nil, the current thought is that when the program is concurrent, the events notify may have some problems
-        reporters.each do |report|
-          report.notify event
-        end
+      reporters.each do |report|
+        report.notify event
       end
     end
 
