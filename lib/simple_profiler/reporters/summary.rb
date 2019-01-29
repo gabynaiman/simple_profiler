@@ -5,7 +5,7 @@ module SimpleProfiler
       attr_reader :events
       
       def initialize
-        @events = []
+        @events = Concurrent::Array.new
       end
 
       def notify(event)
@@ -15,7 +15,6 @@ module SimpleProfiler
       def ranking(options={})
         order = options.fetch(:sort_by, :total_time)
 
-        # TODO: find why some events are nil, the current thought is that when the program is concurrent, the events notify may have some problems
         events_by_method = events.compact.group_by {|e| {klass: e.klass.to_s, method: e.method, target: e.target}}
         
         ranking = events_by_method.map do |key, values|

@@ -1,5 +1,6 @@
 require 'datacenter'
 require 'class_config'
+require 'concurrent'
 
 require_relative 'simple_profiler/version'
 require_relative 'simple_profiler/event'
